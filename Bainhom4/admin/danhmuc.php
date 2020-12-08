@@ -7,7 +7,7 @@
 </head>
 <?php
 	include '../include/connect.php';
-	$hienthi = mysqli_query($link,"SELECT * FROM danhmuc");
+	$hienthi = mysqli_query($con,"SELECT * FROM danhmuc");
 			 $dem = mysqli_num_rows($hienthi);
 ?>
 <div class="quanlysp">
@@ -84,6 +84,6 @@
         var	madm=madm;
         var link="xoa_danhmuc.php?madm="+madm;
         if(confirm("Bạn có chắc chắn muốn xóa danh mục này?")==true)
-            window.open(link,"_self",1);
+            window.open(con,"_self",1);
     }
 </script>
