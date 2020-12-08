@@ -4,7 +4,7 @@
 	include ('../include/connect.php');
 	
     $select = "select * from sanpham inner join danhmuc on sanpham.madm=danhmuc.madm";
-    $query = mysqli_query($link,$select);
+    $query = mysqli_query($con,$select);
     $dem = mysqli_num_rows($query);
 ?>
 <div class="quanlysp">
@@ -53,7 +53,7 @@
 
 		// Chạy 1 MySQL query để hiện thị kết quả trên trang hiện tại  
 
-		$sql = mysqli_query($link,"SELECT * FROM sanpham inner join danhmuc on sanpham.madm=danhmuc.madm ORDER by idsp DESC  LIMIT $from, $max_results"); 
+		$sql = mysqli_query($con,"SELECT * FROM sanpham inner join danhmuc on sanpham.madm=danhmuc.madm ORDER by idsp DESC  LIMIT $from, $max_results"); 
 
 
 
@@ -92,7 +92,7 @@
 	
 	<?php
 			// Tính tổng kết quả trong toàn DB:  
-			$total_results = mysqli_num_rows(mysqli_query($link,"SELECT *FROM sanpham"));  
+			$total_results = mysqli_num_rows(mysqli_query($con,"SELECT *FROM sanpham"));  
 
 			// Tính tổng số trang. Làm tròn lên sử dụng ceil()  
 			$total_pages = ceil($total_results / $max_results);  
