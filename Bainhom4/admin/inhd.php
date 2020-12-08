@@ -58,7 +58,7 @@ $mahd=$_GET['mahd'];
                       <div align="left">
                         <?php		
 $sql1="select * from hoadon where mahd='$mahd'";
-$rows1=mysqli_query($link,$sql1);
+$rows1=mysqli_query($con,$sql1);
 $row1=mysqli_fetch_array($rows1);
 
 ?>
@@ -98,7 +98,7 @@ $row1=mysqli_fetch_array($rows1);
                               <td ><span class="style3">Phương thức thanh toán:</span></td>
 							   <?php		
 								$sql2="select * from chitiethoadon where mahd='$mahd'";
-								$rows2=mysqli_query($link,$sql2);
+								$rows2=mysqli_query($con,$sql2);
 								$row2=mysqli_fetch_array($rows2);
 								
 								?>
@@ -119,7 +119,7 @@ $row1=mysqli_fetch_array($rows1);
    $stt=1;
 	$tong=0;
 	$sql="select * from chitiethoadon,sanpham where mahd='$mahd' and chitiethoadon.idsp=sanpham.idsp";
-	$rows=mysqli_query($link,$sql);
+	$rows=mysqli_query($con,$sql);
 	while($row=mysqli_fetch_array($rows))
 	{
 		$thanhtien=$row['gia']*$row['soluong'];
