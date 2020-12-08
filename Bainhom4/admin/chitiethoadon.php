@@ -3,7 +3,7 @@
 	include ('../include/connect.php');
 	
     $select = "select * from sanpham, chitiethoadon where mahd={$_GET['mahd']} and chitiethoadon.idsp=sanpham.idsp";
-    $query = mysqli_query($link,$select);
+    $query = mysqli_query($con,$select);
     $dem = mysqli_num_rows($query);
 ?>
 <title>Chi tiết Hoá đơn</title><div class="quanlysp">
