@@ -75,7 +75,7 @@ if(isset($_GET['admin']))
 					</tr>
 					<?php 
 						$i=1;
-						$sql=mysqli_query($link,"select * from hoadon where trangthai='1'");
+						$sql=mysqli_query($con,"select * from hoadon where trangthai='1'");
 						while($row=mysqli_fetch_array($sql))
 						{
 					
