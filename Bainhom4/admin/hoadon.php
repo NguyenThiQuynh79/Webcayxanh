@@ -4,7 +4,7 @@
 	include ('../include/connect.php');
 	
     $select = "select * from hoadon";
-    $query = mysqli_query($link,$select);
+    $query = mysqli_query($con,$select);
     $dem = mysqli_num_rows($query);
 ?>
 <div class="quanlysp">
@@ -88,7 +88,7 @@
 	
 	<?php
 			// Tính tổng kết quả trong toàn DB:  
-			$total_results = mysqli_num_rows(mysqli_query($link,"SELECT COUNT(*) as Num FROM hoadon"));  
+			$total_results = mysqli_num_rows(mysqli_query($con,"SELECT COUNT(*) as Num FROM hoadon"));  
 
 			// Tính tổng số trang. Làm tròn lên sử dụng ceil()  
 			$total_pages = ceil($total_results / $max_results);  
