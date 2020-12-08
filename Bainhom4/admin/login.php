@@ -37,7 +37,7 @@ if(isset($_POST['login']))
     else
     {
         $sql_check2 = "select * from nguoidung where username = '$username' and password = '$password'";
-        $rows = mysqli_query($link,$sql_check2);    
+        $rows = mysqli_query($con,$sql_check2);    
         $dem2 = mysqli_num_rows($rows);
         if($dem2 == 0)
             echo "<p class='thongbao1'>Mật khẩu không chính xác</p>";
